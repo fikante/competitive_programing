@@ -1,10 +1,12 @@
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        l=[]
+        smaller_arr = []
         for i in range(len(nums)):
-            count=0
-            for j in range(len(nums)):
-                if nums[j] < nums[i]:
-                    count+=1
-            l.append(count)
-        return l
+            count = 0
+            j = 0
+            while j < len(nums):
+                if nums[i] > nums[j]:
+                    count += 1
+                j += 1
+            smaller_arr.append(count)
+        return smaller_arr
