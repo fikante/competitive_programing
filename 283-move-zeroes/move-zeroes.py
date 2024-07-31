@@ -3,11 +3,9 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        left = 0
-
-        for right in range(len(nums)):
-            if nums[right] != 0:
-                nums[right], nums[left] = nums[left], nums[right]
-                left += 1
-        
-        return nums
+        l, r = 0,0
+        while r < len(nums):
+            if nums[r] != 0:
+                nums[l], nums[r] = nums[r], nums[l]
+                l += 1
+            r += 1
