@@ -6,6 +6,4 @@ class Solution:
         for s in strs:
             sorted_s = tuple(sorted(s))
             map_anagram[sorted_s].append(s)
-        for values in map_anagram.values():
-            grouped_anagram.append(values)
-        return grouped_anagram
+        return [values for values in map_anagram.values()]
