@@ -1,8 +1,17 @@
 class Solution:
     def numberOfPairs(self, nums1: List[int], nums2: List[int], k: int) -> int:
-        count = 0
-        for i in nums1:
-            for j in nums2:
-                if i % (j*k) == 0:
-                    count += 1
-        return count
+
+        divisor_map = {}
+        good_pairs = 0
+        for num in nums2:
+            divisor = num * k
+            if divisor in divisor_map:
+                divisor_map[divisor] += 1
+            else:
+                divisor_map[divisor] = 1
+        for num in nums1:
+            for divisor in divisor_map:
+                if num % divisor == 0:
+                    good_pairs += divisor_map[divisor]
+        
+        return good_pairs
