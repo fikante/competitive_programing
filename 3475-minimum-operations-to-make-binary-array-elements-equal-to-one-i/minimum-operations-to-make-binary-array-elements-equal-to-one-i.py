@@ -11,7 +11,7 @@ class Solution:
                         nums[m] = 0
                 res += 1
             l += 1
-        h = Counter(nums)
-        if h[0] != 0:
+        if all(num == 1 for num in nums):
+            return res
+        else:
             return -1
-        return res
