@@ -11,7 +11,7 @@ class Solution:
                         nums[m] = 0
                 res += 1
             l += 1
-        if all(num == 1 for num in nums):
+        if nums[len(nums)-2] == 1 and nums[len(nums)-1] == 1:
             return res
         else:
             return -1
